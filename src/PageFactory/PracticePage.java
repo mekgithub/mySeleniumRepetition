@@ -31,4 +31,5 @@ public class PracticePage {
 
     @FindBy(how = How.ID,using = "alertbtn")
     public static WebElement alertButon;
+
 }

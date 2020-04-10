@@ -10,22 +10,25 @@ public class ExplicitWait {//selenium day 14
         driver.get("http://www.expedia.com");
         //set the timeout for axpilict wait,expedia .com,clicking the flights button
         WebDriverWait wait=new WebDriverWait(driver,20);
-
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.cssSelector("#tab-flight-tab-hp"))));
         driver.findElement(By.id("tab-flight-tab-hp")).click();
+        System.out.println(1);
 
         //click hotel button
-        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("tab-hotel-tab-hp")));//day 14,01:21:00
-        driver.findElement(By.id("#tab-hotel-tab-hp")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("tab-hotel-tab-hp")));//day 14,01:21:00
+        driver.findElement(By.id("tab-hotel-tab-hp")).click();
+        System.out.println(2);
 
         //click bundle and save
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("tab-package-tab-hp")))).click();
         driver.findElement(By.id("tab-package-tab-hp")).click();
+        System.out.println(3);
         //yukaridi bundle save tiklayinca going to part kayboldugu icin,
         // yani hotel inputu kyaboldugu icin asagidaki kodda invisibility of kullanildi.
-        wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.id("hotel-destination-hp-hotel"))));
-        driver.findElement(By.id("hotel-destination-hp-hotel")).click();
+        wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.cssSelector("#hotel-destination-hp-hotel"))));
+        driver.findElement(By.cssSelector("#hotel-destination-hp-hotel")).click();
         System.out.println("The input of hotel is invisible");
+        System.out.println(4);
 
 
     }

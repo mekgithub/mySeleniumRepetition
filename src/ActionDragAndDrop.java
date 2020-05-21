@@ -21,12 +21,12 @@ public class ActionDragAndDrop {
         Actions myAction=new Actions(driver);
         myAction.dragAndDrop(from,target).build().perform();
 
-        WebElement source2=driver.findElement(By.xpath("//div[@id='products']/div/ul/li[4]/a"));
+       /* WebElement source2=driver.findElement(By.xpath("//div[@id='products']/div/ul/li[4]/a"));
         WebElement target2=driver.findElement(By.xpath("//ol[@id='amt7']/li"));
 
 
          WebElement source3=driver.findElement(By.xpath("//a[text()=' SALES ']"));
          WebElement target3=driver.findElement(By.xpath("//ol[@id='loan']/li"));
-         myAction.dragAndDrop(source3,target3).build().perform();
+         myAction.dragAndDrop(source3,target3).build().perform();*/
     }
 }
